@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <style>
+        header{
+            background-color: darkolivegreen;
+        }
+
+        h1{
+            color: white;
+            text-align: center;
+        }
+
+        form {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }   
+
+        section{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .long-header{
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+        width: 98%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #ccc;
+        }
+        
+        button[type='submit']{
+            background-color: darkolivegreen;
+            color: white;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="long-header">
+    <h1>Add Event</h1>
+</header>
+<section>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Event</button>
+    </section>
+    </form>
+</body>
+</html>
